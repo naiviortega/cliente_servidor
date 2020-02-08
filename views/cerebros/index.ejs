@@ -1,0 +1,27 @@
+<% include ../_header %>   
+<h1><%= title %></h1>
+<h4>Lista de cerebros</h4>    
+<table class="table table-striped">
+  <tr>
+    <th>Sabor</th>
+    <th>Descripción</th>
+    <th>IQ</th>
+    <th>Imagen</th>
+  </tr>
+  <%
+    if(coleccion){
+      coleccion.forEach(function(cerebro){
+  %>
+  <tr>
+    <td><%= cerebro.flavor %></td>
+    <td><%= cerebro.description %></td>
+    <td><%= cerebro.iq %></td>
+    <td><%= cerebro.picture %></td>
+  </tr>
+  <%
+      });
+    }
+  %>
+</table>
+
+<% include ../_footer %>
